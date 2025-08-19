@@ -1,0 +1,120 @@
+{
+  "name": "Base44 Documentation Tool",
+  "version": "1.0.0",
+  "description": "AI-powered Base44 documentation scraper and query system",
+  "ai_assistant_instructions": {
+    "recognition_files": [
+      "AI_ASSISTANT_PROMPT.md",
+      ".ai-tools.json",
+      "b44"
+    ],
+    "primary_command": "./b44",
+    "quick_start": [
+      "./b44 search \"your query\"",
+      "./b44 get \"/page-path\"",
+      "./b44 scrape"
+    ],
+    "triggers": [
+      "base44",
+      "Base44",
+      "BASE44",
+      "authentication",
+      "SSO",
+      "integration",
+      "payment gateway",
+      "webhook",
+      "API",
+      "documentation",
+      "setup guide"
+    ]
+  },
+  "capabilities": {
+    "search": {
+      "command": "./b44 search",
+      "description": "Search Base44 documentation",
+      "examples": [
+        "./b44 search \"Google login\"",
+        "./b44 s \"API authentication\" -s Integrations",
+        "./b44 search \"payment setup\""
+      ]
+    },
+    "get_page": {
+      "command": "./b44 get",
+      "description": "Retrieve specific documentation page",
+      "examples": [
+        "./b44 get \"/Getting-Started/FAQ\"",
+        "./b44 g \"/Guides/Setting-up-SSO\"",
+        "./b44 get \"/Integrations/Stripe-integration\""
+      ]
+    },
+    "smart_search": {
+      "command": "python3 ai_helper.py smart-search",
+      "description": "AI-optimized search with structured results",
+      "examples": [
+        "python3 ai_helper.py smart-search \"Google authentication\"",
+        "python3 ai_helper.py quick-answer \"How to setup payments?\""
+      ]
+    },
+    "maintenance": {
+      "update": "./b44 scrape",
+      "stats": "./b44 stats",
+      "serve": "./b44 serve"
+    }
+  },
+  "sections": {
+    "Getting started": [
+      "Quick start guide",
+      "Working with AI",
+      "FAQ",
+      "Billing and plans",
+      "Glossary"
+    ],
+    "Guides": [
+      "App templates",
+      "Design and styling",
+      "Data management",
+      "Security settings",
+      "Custom domains",
+      "Backend functions",
+      "SSO setup",
+      "Security check",
+      "Workspace setup"
+    ],
+    "Integrations": [
+      "Introduction",
+      "Authentication providers",
+      "Payment gateways",
+      "APIs and webhooks",
+      "Third-party services"
+    ]
+  },
+  "common_use_cases": [
+    {
+      "user_question": "How do I set up Google login?",
+      "ai_action": "./b44 search \"Google SSO\" -s Guides",
+      "expected_result": "SSO setup guide with Google configuration steps"
+    },
+    {
+      "user_question": "What payment options does Base44 support?",
+      "ai_action": "./b44 search \"payment gateway\" -s Integrations",
+      "expected_result": "Payment integration options and setup guides"
+    },
+    {
+      "user_question": "How do I connect an API?",
+      "ai_action": "./b44 search \"API integration\" -s Integrations",
+      "expected_result": "API integration guides and webhook setup"
+    },
+    {
+      "user_question": "Base44 billing questions",
+      "ai_action": "./b44 get \"/Getting-Started/Billing-plans-credits\"",
+      "expected_result": "Complete billing and pricing information"
+    }
+  ],
+  "setup_required": false,
+  "auto_update": true,
+  "last_updated": "2024-01-01",
+  "support": {
+    "documentation": "https://docs.base44.com",
+    "issues": "Run ./b44 stats to verify tool status"
+  }
+}

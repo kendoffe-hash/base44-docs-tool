@@ -1,0 +1,67 @@
+#!/bin/bash
+# Base44 Docs Quick Access Script
+
+BASE44_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+case "$1" in
+    "search"|"s")
+        shift
+        python3 "$BASE44_DIR/quick_search.py" "$@"
+        ;;
+    "get"|"g")
+        shift
+        python3 "$BASE44_DIR/base44_docs_scraper.py" get "$@"
+        ;;
+    "scrape")
+        python3 "$BASE44_DIR/base44_docs_scraper.py" scrape
+        ;;
+    "stats")
+        python3 "$BASE44_DIR/base44_docs_scraper.py" stats
+        ;;
+    "serve")
+        python3 "$BASE44_DIR/base44_docs_scraper.py" serve "$@"
+        ;;
+    "update")
+        python3 "$BASE44_DIR/update_scheduler.py" --run-once
+        ;;
+    "demo")
+        python3 "$BASE44_DIR/example_usage.py"
+        ;;
+    "ai-search")
+        shift
+        python3 "$BASE44_DIR/ai_helper.py" smart-search "$@"
+        ;;
+    "ai-answer")
+        shift
+        python3 "$BASE44_DIR/ai_helper.py" quick-answer "$@"
+        ;;
+    "help"|"-h"|"--help"|"")
+        echo "Base44 Documentation Quick Access"
+        echo ""
+        echo "Usage: b44 <command> [options]"
+        echo ""
+        echo "Commands:"
+        echo "  search, s <query>     Quick search documentation"
+        echo "  get, g <url>          Get specific page content"
+        echo "  scrape                Scrape/update documentation"
+        echo "  stats                 Show database statistics"
+        echo "  serve                 Start API server"
+        echo "  update                Run one-time update"
+        echo "  demo                  Run feature demonstration"
+        echo "  ai-search <query>     AI-optimized search with context"
+        echo "  ai-answer <query>     Get formatted AI-ready answer"
+        echo "  help                  Show this help"
+        echo ""
+        echo "Examples:"
+        echo "  b44 search authentication"
+        echo "  b44 s \"API key\" -s Integrations"
+        echo "  b44 get /Getting-Started/FAQ"
+        echo "  b44 ai-answer \"How to setup Google login?\""
+        echo "  b44 serve --port 8001"
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Use 'b44 help' for usage information"
+        exit 1
+        ;;
+esac
