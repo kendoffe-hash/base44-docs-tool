@@ -12,3 +12,4 @@ markdown==3.5.1
 html2text==2020.1.16
 schedule==1.2.0
 watchdog==3.0.0
+pygame==2.5.2

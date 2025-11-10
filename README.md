@@ -6,6 +6,20 @@
 
 A powerful, production-ready tool that scrapes, stores, and queries Base44 documentation locally. Perfect for developers, AI assistants, and teams who need fast, reliable access to Base44 docs without constant web browsing.
 
+## 🥊 NEW: Boxing Game
+
+This repository now includes a fun 2D boxing game built with Python and Pygame! Fight against an AI opponent with multiple punch types, blocking mechanics, and smooth animations.
+
+**Quick Start:**
+```bash
+pip install pygame
+python3 boxing_game.py
+```
+
+See [BOXING_GAME_README.md](BOXING_GAME_README.md) for full documentation or [BOXING_GAME_QUICKSTART.md](BOXING_GAME_QUICKSTART.md) for quick instructions.
+
+---
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 
